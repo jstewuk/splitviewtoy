@@ -7,13 +7,29 @@
 //
 
 #import "JSAppDelegate.h"
+#import "JSMasterNavController.h"
+#import "JSDetailViewController.h"
+#import "JSTableViewController.h"
+
+@interface JSAppDelegate () <UISplitViewControllerDelegate>
+
+@end
 
 @implementation JSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    UISplitViewController* splitVC = [[UISplitViewController alloc] init];
+    splitVC.delegate = self;
+    JSTableViewController *tableVC = [[JSTableViewController alloc] init];
+    JSMasterNavController* masterNavVC = [[JSMasterNavController alloc] initWithRootViewController:tableVC];
+    JSDetailViewController *detailVC = [[JSDetailViewController alloc] init];
+    [splitVC setViewControllers:@[masterNavVC, detailVC]];;
+    
+    self.window.rootViewController = splitVC;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -45,5 +61,12 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation {
+    return NO;
+}
+
 
 @end

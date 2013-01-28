@@ -20,7 +20,15 @@
 		3871A5F916B5B76B00F7B9F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5D916B5B76B00F7B9F5 /* UIKit.framework */; };
 		3871A5FA16B5B76B00F7B9F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5DB16B5B76B00F7B9F5 /* Foundation.framework */; };
 		3871A60216B5B76B00F7B9F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3871A60016B5B76B00F7B9F5 /* InfoPlist.strings */; };
-		3871A60516B5B76B00F7B9F5 /* SplitViewToyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3871A60416B5B76B00F7B9F5 /* SplitViewToyTests.m */; };
+		38AF9DF116B5BE5900065404 /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9DF016B5BE5900065404 /* AppDelegateSpec.m */; };
+		38AF9DF416B5C3B900065404 /* SplitViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9DF316B5C3B900065404 /* SplitViewControllerSpec.m */; };
+		38AF9E5216B5D54B00065404 /* JSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E5016B5D54B00065404 /* JSDetailViewController.m */; };
+		38AF9E5316B5D54B00065404 /* JSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AF9E5116B5D54B00065404 /* JSDetailViewController.xib */; };
+		38AF9E5716B5D63D00065404 /* JSMasterNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E5516B5D63D00065404 /* JSMasterNavController.m */; };
+		38AF9E5816B5D63D00065404 /* JSMasterNavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AF9E5616B5D63D00065404 /* JSMasterNavController.xib */; };
+		38AF9E5C16B5D99100065404 /* JSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E5A16B5D99100065404 /* JSTableViewController.m */; };
+		38AF9E5D16B5D99100065404 /* JSTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AF9E5B16B5D99100065404 /* JSTableViewController.xib */; };
+		D8400138CBC248B282EAD0C4 /* libPods-SplitViewToyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB55E3265844AF18FEBD55F /* libPods-SplitViewToyTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +59,19 @@
 		3871A5F716B5B76B00F7B9F5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3871A5FF16B5B76B00F7B9F5 /* SplitViewToyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SplitViewToyTests-Info.plist"; sourceTree = "<group>"; };
 		3871A60116B5B76B00F7B9F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3871A60316B5B76B00F7B9F5 /* SplitViewToyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplitViewToyTests.h; sourceTree = "<group>"; };
-		3871A60416B5B76B00F7B9F5 /* SplitViewToyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplitViewToyTests.m; sourceTree = "<group>"; };
+		38AF9DF016B5BE5900065404 /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
+		38AF9DF316B5C3B900065404 /* SplitViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplitViewControllerSpec.m; path = ../SplitViewToy/SplitViewControllerSpec.m; sourceTree = "<group>"; };
+		38AF9E4F16B5D54B00065404 /* JSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDetailViewController.h; sourceTree = "<group>"; };
+		38AF9E5016B5D54B00065404 /* JSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDetailViewController.m; sourceTree = "<group>"; };
+		38AF9E5116B5D54B00065404 /* JSDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSDetailViewController.xib; sourceTree = "<group>"; };
+		38AF9E5416B5D63D00065404 /* JSMasterNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterNavController.h; sourceTree = "<group>"; };
+		38AF9E5516B5D63D00065404 /* JSMasterNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterNavController.m; sourceTree = "<group>"; };
+		38AF9E5616B5D63D00065404 /* JSMasterNavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSMasterNavController.xib; sourceTree = "<group>"; };
+		38AF9E5916B5D99100065404 /* JSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTableViewController.h; sourceTree = "<group>"; };
+		38AF9E5A16B5D99100065404 /* JSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTableViewController.m; sourceTree = "<group>"; };
+		38AF9E5B16B5D99100065404 /* JSTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSTableViewController.xib; sourceTree = "<group>"; };
+		4571266E64834D15870727F4 /* Pods-SplitViewToyTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitViewToyTests.xcconfig"; path = "Pods/Pods-SplitViewToyTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		EBB55E3265844AF18FEBD55F /* libPods-SplitViewToyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SplitViewToyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +92,7 @@
 				3871A5F816B5B76B00F7B9F5 /* SenTestingKit.framework in Frameworks */,
 				3871A5F916B5B76B00F7B9F5 /* UIKit.framework in Frameworks */,
 				3871A5FA16B5B76B00F7B9F5 /* Foundation.framework in Frameworks */,
+				D8400138CBC248B282EAD0C4 /* libPods-SplitViewToyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +106,7 @@
 				3871A5FD16B5B76B00F7B9F5 /* SplitViewToyTests */,
 				3871A5D816B5B76B00F7B9F5 /* Frameworks */,
 				3871A5D616B5B76B00F7B9F5 /* Products */,
+				4571266E64834D15870727F4 /* Pods-SplitViewToyTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +126,7 @@
 				3871A5DB16B5B76B00F7B9F5 /* Foundation.framework */,
 				3871A5DD16B5B76B00F7B9F5 /* CoreGraphics.framework */,
 				3871A5F716B5B76B00F7B9F5 /* SenTestingKit.framework */,
+				EBB55E3265844AF18FEBD55F /* libPods-SplitViewToyTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +136,9 @@
 			children = (
 				3871A5E816B5B76B00F7B9F5 /* JSAppDelegate.h */,
 				3871A5E916B5B76B00F7B9F5 /* JSAppDelegate.m */,
+				38AF9E5F16B5DA1C00065404 /* MasterNavController */,
+				38AF9E5E16B5D9F700065404 /* DetailViewController */,
+				38AF9E6016B5DA4900065404 /* TableViewController */,
 				3871A5E016B5B76B00F7B9F5 /* Supporting Files */,
 			);
 			path = SplitViewToy;
@@ -136,8 +161,8 @@
 		3871A5FD16B5B76B00F7B9F5 /* SplitViewToyTests */ = {
 			isa = PBXGroup;
 			children = (
-				3871A60316B5B76B00F7B9F5 /* SplitViewToyTests.h */,
-				3871A60416B5B76B00F7B9F5 /* SplitViewToyTests.m */,
+				38AF9DF316B5C3B900065404 /* SplitViewControllerSpec.m */,
+				38AF9DF016B5BE5900065404 /* AppDelegateSpec.m */,
 				3871A5FE16B5B76B00F7B9F5 /* Supporting Files */,
 			);
 			path = SplitViewToyTests;
@@ -150,6 +175,36 @@
 				3871A60016B5B76B00F7B9F5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38AF9E5E16B5D9F700065404 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38AF9E4F16B5D54B00065404 /* JSDetailViewController.h */,
+				38AF9E5016B5D54B00065404 /* JSDetailViewController.m */,
+				38AF9E5116B5D54B00065404 /* JSDetailViewController.xib */,
+			);
+			name = DetailViewController;
+			sourceTree = "<group>";
+		};
+		38AF9E5F16B5DA1C00065404 /* MasterNavController */ = {
+			isa = PBXGroup;
+			children = (
+				38AF9E5416B5D63D00065404 /* JSMasterNavController.h */,
+				38AF9E5516B5D63D00065404 /* JSMasterNavController.m */,
+				38AF9E5616B5D63D00065404 /* JSMasterNavController.xib */,
+			);
+			name = MasterNavController;
+			sourceTree = "<group>";
+		};
+		38AF9E6016B5DA4900065404 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38AF9E5916B5D99100065404 /* JSTableViewController.h */,
+				38AF9E5A16B5D99100065404 /* JSTableViewController.m */,
+				38AF9E5B16B5D99100065404 /* JSTableViewController.xib */,
+			);
+			name = TableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +235,7 @@
 				3871A5F216B5B76B00F7B9F5 /* Frameworks */,
 				3871A5F316B5B76B00F7B9F5 /* Resources */,
 				3871A5F416B5B76B00F7B9F5 /* ShellScript */,
+				07E4CC3086BA4CB284AE8863 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,6 +284,9 @@
 				3871A5EC16B5B76B00F7B9F5 /* Default.png in Resources */,
 				3871A5EE16B5B76B00F7B9F5 /* Default@2x.png in Resources */,
 				3871A5F016B5B76B00F7B9F5 /* Default-568h@2x.png in Resources */,
+				38AF9E5316B5D54B00065404 /* JSDetailViewController.xib in Resources */,
+				38AF9E5816B5D63D00065404 /* JSMasterNavController.xib in Resources */,
+				38AF9E5D16B5D99100065404 /* JSTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +301,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07E4CC3086BA4CB284AE8863 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SplitViewToyTests-resources.sh\"\n";
+		};
 		3871A5F416B5B76B00F7B9F5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +337,9 @@
 			files = (
 				3871A5E616B5B76B00F7B9F5 /* main.m in Sources */,
 				3871A5EA16B5B76B00F7B9F5 /* JSAppDelegate.m in Sources */,
+				38AF9E5216B5D54B00065404 /* JSDetailViewController.m in Sources */,
+				38AF9E5716B5D63D00065404 /* JSMasterNavController.m in Sources */,
+				38AF9E5C16B5D99100065404 /* JSTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3871A60516B5B76B00F7B9F5 /* SplitViewToyTests.m in Sources */,
+				38AF9DF116B5BE5900065404 /* AppDelegateSpec.m in Sources */,
+				38AF9DF416B5C3B900065404 /* SplitViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +440,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SplitViewToy/SplitViewToy-Prefix.pch";
 				INFOPLIST_FILE = "SplitViewToy/SplitViewToy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SplitViewToy/SplitViewToy-Prefix.pch";
 				INFOPLIST_FILE = "SplitViewToy/SplitViewToy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -381,6 +460,7 @@
 		};
 		3871A60C16B5B76B00F7B9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4571266E64834D15870727F4 /* Pods-SplitViewToyTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SplitViewToy.app/SplitViewToy";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -398,6 +478,7 @@
 		};
 		3871A60D16B5B76B00F7B9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4571266E64834D15870727F4 /* Pods-SplitViewToyTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SplitViewToy.app/SplitViewToy";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -432,6 +513,7 @@
 				3871A60A16B5B76B00F7B9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3871A60B16B5B76B00F7B9F5 /* Build configuration list for PBXNativeTarget "SplitViewToyTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +522,7 @@
 				3871A60D16B5B76B00F7B9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
