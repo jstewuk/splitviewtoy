@@ -7,6 +7,7 @@
 //
 
 #import "JSDetailViewController.h"
+#import "JSView.h"
 
 @interface UIWindow (AutoLayoutDebug)
 + (UIWindow *)keyWindow;
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) NSDictionary *metricsDictionary;
 @property (nonatomic, strong) NSArray *expConstraints;
 @property (nonatomic, strong) NSArray *contentViewConstraints;
+@property (nonatomic, strong) NSArray *viewConstraints;
 
 @end
 
@@ -49,7 +51,7 @@
     // remove autoresize constraints
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
+    JSView *contentView = [[JSView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:contentView];
     self.contentView = contentView;
     
@@ -59,10 +61,10 @@
     playView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.contentView addSubview:playView];
     _playView = playView;
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
     
     CGRect frame = {CGPointZero, [self superSize]};
     self.contentView.frame = frame;
@@ -109,7 +111,8 @@
 - (NSDictionary *)viewsDictionary {
     if (! _viewsDictionary ) {
         _viewsDictionary = (@{@"mView" : self.contentView,
-                                         @"playView" : self.playView});
+                            @"playView" : self.playView,
+                            @"mainView" : self.view });
     }
     return _viewsDictionary;
 }
@@ -123,39 +126,8 @@
     return _metricsDictionary;
 }
 
-- (NSArray *)expConstraints {
-    
-    if ( ! _expConstraints ) {
-        NSArray *hConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[playView(30)]"
-                                                                   options:0
-                                                                   metrics:nil
-                                                                     views:self.viewsDictionary];
-        _expConstraints =  [NSArray arrayWithArray:hConstr];
-        
-        NSArray *vConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[playView(30)]"
-                                                                   options:0
-                                                                   metrics:nil
-                                                                     views:self.viewsDictionary];
-        _expConstraints = [_expConstraints arrayByAddingObjectsFromArray:vConstr];
-        
-        /*
-        NSArray *h1Constr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[mView(superWidth)]"
-                                                                    options:0
-                                                                    metrics:self.metricsDictionary
-                                                                      views:self.viewsDictionary];
-        _expConstraints = [_expConstraints arrayByAddingObjectsFromArray:h1Constr];
-        
-        NSArray *v1Constr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[mView(superHeight)]"
-                                                                    options:0
-                                                                    metrics:self.metricsDictionary
-                                                                      views:self.viewsDictionary];
-        _expConstraints = [_expConstraints arrayByAddingObjectsFromArray:v1Constr];
-        */
-    }
-    return _expConstraints;
-}
 
-// Expand contentView to match view controllers view
+// Expand contentView to match view controllers view (set on self.view)
 - (NSArray *)contentViewConstraints {
     if (! _contentViewConstraints ) {
         NSArray *h1Constr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mView]|"
@@ -189,26 +161,55 @@
                                                                      views:self.viewsDictionary];
         _originalConstraints = [_originalConstraints arrayByAddingObjectsFromArray:vConstr];
         
-        /*
-        NSArray *h1Constr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[mView(superWidth)]"
-                                                                    options:0
-                                                                    metrics:self.metricsDictionary
-                                                                      views:self.viewsDictionary];
-        _originalConstraints = [_originalConstraints arrayByAddingObjectsFromArray:h1Constr];
-        
-        
-        NSArray *v1Constr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[mView(superHeight)]"
-                                                                    options:0
-                                                                    metrics:self.metricsDictionary
-                                                                      views:self.viewsDictionary];
-       _originalConstraints = [_originalConstraints arrayByAddingObjectsFromArray:v1Constr];
-       */ 
     }
     return _originalConstraints;
 }
 
+- (NSArray *)expConstraints {
+    
+    if ( ! _expConstraints ) {
+        NSArray *hConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[playView(30)]"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _expConstraints =  [NSArray arrayWithArray:hConstr];
+        
+        NSArray *vConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[playView(30)]"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _expConstraints = [_expConstraints arrayByAddingObjectsFromArray:vConstr];
+        
+    }
+    return _expConstraints;
+}
+
+- (NSArray *)viewConstraints {
+    if (! _viewConstraints) {
+        NSArray *hConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-320-[mainView]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _viewConstraints =  [NSArray arrayWithArray:hConstr];
+        
+        NSArray *vConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mainView]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _viewConstraints =  [_viewConstraints arrayByAddingObjectsFromArray:vConstr];
+    }
+    return _viewConstraints;
+}
+
 - (CGSize)superSize  {
     return [self.view superview].frame.size;
+}
+
+- (void)updateViewConstraints {
+    [super updateViewConstraints];
+    NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
+    
+    [[self.view superview] addConstraints:self.viewConstraints];
 }
 @end
 

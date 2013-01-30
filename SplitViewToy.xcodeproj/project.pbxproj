@@ -28,6 +28,7 @@
 		38AF9E5816B5D63D00065404 /* JSMasterNavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AF9E5616B5D63D00065404 /* JSMasterNavController.xib */; };
 		38AF9E5C16B5D99100065404 /* JSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E5A16B5D99100065404 /* JSTableViewController.m */; };
 		38AF9E5D16B5D99100065404 /* JSTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AF9E5B16B5D99100065404 /* JSTableViewController.xib */; };
+		38AF9E6716B6F9A800065404 /* JSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E6616B6F9A800065404 /* JSView.m */; };
 		D8400138CBC248B282EAD0C4 /* libPods-SplitViewToyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB55E3265844AF18FEBD55F /* libPods-SplitViewToyTests.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		38AF9E5916B5D99100065404 /* JSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTableViewController.h; sourceTree = "<group>"; };
 		38AF9E5A16B5D99100065404 /* JSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTableViewController.m; sourceTree = "<group>"; };
 		38AF9E5B16B5D99100065404 /* JSTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSTableViewController.xib; sourceTree = "<group>"; };
+		38AF9E6516B6F9A800065404 /* JSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSView.h; sourceTree = "<group>"; };
+		38AF9E6616B6F9A800065404 /* JSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSView.m; sourceTree = "<group>"; };
 		4571266E64834D15870727F4 /* Pods-SplitViewToyTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitViewToyTests.xcconfig"; path = "Pods/Pods-SplitViewToyTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		EBB55E3265844AF18FEBD55F /* libPods-SplitViewToyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SplitViewToyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,6 +186,8 @@
 				38AF9E4F16B5D54B00065404 /* JSDetailViewController.h */,
 				38AF9E5016B5D54B00065404 /* JSDetailViewController.m */,
 				38AF9E5116B5D54B00065404 /* JSDetailViewController.xib */,
+				38AF9E6516B6F9A800065404 /* JSView.h */,
+				38AF9E6616B6F9A800065404 /* JSView.m */,
 			);
 			name = DetailViewController;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				38AF9E5216B5D54B00065404 /* JSDetailViewController.m in Sources */,
 				38AF9E5716B5D63D00065404 /* JSMasterNavController.m in Sources */,
 				38AF9E5C16B5D99100065404 /* JSTableViewController.m in Sources */,
+				38AF9E6716B6F9A800065404 /* JSView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
