@@ -8,6 +8,7 @@
 
 #import "JSDetailViewController.h"
 #import "JSView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface UIWindow (AutoLayoutDebug)
 + (UIWindow *)keyWindow;
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) NSArray *expConstraints;
 @property (nonatomic, strong) NSArray *contentViewConstraints;
 @property (nonatomic, strong) NSArray *viewConstraints;
+@property (nonatomic, strong) NSArray *slidLeftViewConstraints;
 
 @end
 
@@ -34,7 +36,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         _isExpanded = NO;
     }
     return self;
@@ -52,6 +53,7 @@
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     JSView *contentView = [[JSView alloc] initWithFrame:CGRectZero];
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:contentView];
     self.contentView = contentView;
     
@@ -61,6 +63,9 @@
     playView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.contentView addSubview:playView];
     _playView = playView;
+    
+    
+    [self addShadowsToView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,8 +80,11 @@
     
     [self.view addConstraints:self.contentViewConstraints];
     
+    
+    // Munge the views.....
+    [[self.view superview] bringSubviewToFront:self.view];
+    
     NSLog(@"autolayout Trace: %@", [[UIWindow keyWindow] _autolayoutTrace]);
-    //[self.view setNeedsLayout];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -89,21 +97,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addShadowsToView {
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds
+                                                          cornerRadius:0.0f];
+    CALayer *layer = self.view.layer;
+    layer.shadowPath = shadowPath.CGPath;
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    layer.shadowRadius = 10.0f;
+    layer.shadowOpacity = 1.0f;
+    self.view.clipsToBounds = NO;
+}
+
+#pragma mark - Constraints
+
 - (void)setExpandedConstraints {
     self.isExpanded = !self.isExpanded;
     
+    /*
     if (self.isExpanded) {
         [self.contentView removeConstraints:self.originalConstraints];
         [self.contentView addConstraints:self.expConstraints];
+        [self.view removeConstraints:[self viewConstraints]];
+        [self.view addConstraints:[self slidLeftViewConstraints]];
     } else {
         [self.contentView removeConstraints:self.expConstraints];
         [self.contentView addConstraints:self.originalConstraints];
+        [self.view removeConstraints:[self slidLeftViewConstraints]];
+        [self.view addConstraints:[self viewConstraints]];
     }
+    */
 }
 
 - (IBAction)handleTap:(id)sender {
     NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
     [self setExpandedConstraints];
+    [self.view setNeedsUpdateConstraints];
+    [self.view setNeedsLayout];
     
     NSLog(@"%@", [[UIWindow keyWindow] _autolayoutTrace]);
 }
@@ -201,15 +230,44 @@
     return _viewConstraints;
 }
 
+- (NSArray *)slidLeftViewConstraints {
+    if (! _slidLeftViewConstraints) {
+        NSArray *hConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[mainView(768)]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _slidLeftViewConstraints =  [NSArray arrayWithArray:hConstr];
+        
+        NSArray *vConstr = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mainView]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:self.viewsDictionary];
+        _slidLeftViewConstraints =  [_slidLeftViewConstraints arrayByAddingObjectsFromArray:vConstr];
+    }
+    return _slidLeftViewConstraints;
+    
+}
+
 - (CGSize)superSize  {
     return [self.view superview].frame.size;
 }
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
-    NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
+    //NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
     
-    [[self.view superview] addConstraints:self.viewConstraints];
+    
+    if (self.isExpanded) {
+        [self.contentView removeConstraints:self.originalConstraints];
+        [self.contentView addConstraints:self.expConstraints];
+        [[self.view superview] removeConstraints:[self viewConstraints]];
+        [[self.view superview] addConstraints:[self slidLeftViewConstraints]];
+    } else {
+        [self.contentView removeConstraints:self.expConstraints];
+        [self.contentView addConstraints:self.originalConstraints];
+        [[self.view superview] removeConstraints:[self slidLeftViewConstraints]];
+        [[self.view superview] addConstraints:[self viewConstraints]];
+    }
 }
 @end
 
