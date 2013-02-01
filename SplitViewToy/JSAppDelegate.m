@@ -10,6 +10,7 @@
 #import "JSMasterNavController.h"
 #import "JSDetailViewController.h"
 #import "JSTableViewController.h"
+#import "JSContainerViewController.h"
 
 @interface JSAppDelegate () <UISplitViewControllerDelegate>
 
@@ -21,16 +22,38 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    /*
     UISplitViewController* splitVC = [[UISplitViewController alloc] init];
     splitVC.delegate = self;
     JSTableViewController *tableVC = [[JSTableViewController alloc] init];
     JSMasterNavController* masterNavVC = [[JSMasterNavController alloc] initWithRootViewController:tableVC];
     JSDetailViewController *detailVC = [[JSDetailViewController alloc] init];
-    [splitVC setViewControllers:@[masterNavVC, detailVC]];;
-    
+    [splitVC setViewControllers:@[masterNavVC, detailVC]];
+     
     self.window.rootViewController = splitVC;
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+ 
+    JSTableViewController *tableVC = [[JSTableViewController alloc] init];
+    
+    JSMasterNavController* masterNavVC = [[JSMasterNavController alloc] initWithRootViewController:tableVC];
+    JSMasterNavController* masterNavVC = [[JSMasterNavController alloc] initWithRootViewController:genericVC];
+    */
+    
+    JSContainerViewController *containerVC = [[JSContainerViewController alloc] init];
+    JSDetailViewController *genericVC = [[JSDetailViewController alloc] init];    
+    JSDetailViewController *detailVC = [[JSDetailViewController alloc] init];
+    UIViewController *bgVC = [[UIViewController alloc] init];
+    
+    [containerVC setLeftViewController:detailVC];
+    //[containerVC setRightViewController:masterNavVC];
+    [containerVC setRightViewController:genericVC];
+    [containerVC setBackGroundViewController:bgVC];
+    
+    
+    self.window.rootViewController = containerVC;
+    
+    self.window.backgroundColor = [UIColor blueColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

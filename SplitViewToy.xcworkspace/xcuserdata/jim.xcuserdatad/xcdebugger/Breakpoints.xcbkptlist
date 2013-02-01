@@ -20,12 +20,46 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SplitViewToy/JSDetailViewController.m"
-         timestampString = "381271601.868003"
+         filePath = "SplitViewToy/JSContainerViewController.m"
+         timestampString = "381378447.946227"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "201"
+         endingLineNumber = "201"
+         landmarkName = "-handleTap:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SplitViewToy/JSTableViewController.m"
+         timestampString = "381358281.130975"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "39"
+         endingLineNumber = "39"
+         landmarkName = "-viewDidAppear:"
+         landmarkType = "5">
+         <Actions>
+            <BreakpointActionProxy
+               ActionType = "Xcode.BreakpointAction.DebuggerCommand">
+               <ActionContent
+                  consoleCommand = "po [self.tableView isFirstResponder]">
+               </ActionContent>
+            </BreakpointActionProxy>
+         </Actions>
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SplitViewToy/JSContainerViewController.m"
+         timestampString = "381377480.788616"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "-viewDidAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -33,82 +67,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SplitViewToy/JSDetailViewController.m"
-         timestampString = "381271601.868003"
+         filePath = "SplitViewToy/JSContainerViewController.m"
+         timestampString = "381378536.465803"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
-         landmarkName = "-setExpandedConstraints"
+         startingLineNumber = "195"
+         endingLineNumber = "195"
+         landmarkName = "-addTapGestureRecognizer"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "Yes"
-         filePath = "SplitViewToy/JSView.m"
-         timestampString = "381090482.265883"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "23"
-         endingLineNumber = "23"
-         landmarkName = "-layoutSubviews"
-         landmarkType = "5">
-         <Actions>
-            <BreakpointActionProxy
-               ActionType = "Xcode.BreakpointAction.Log">
-               <ActionContent
-                  message = "Before [super layoutSubviews]************"
-                  conveyanceType = "0">
-               </ActionContent>
-            </BreakpointActionProxy>
-            <BreakpointActionProxy
-               ActionType = "Xcode.BreakpointAction.DebuggerCommand">
-               <ActionContent
-                  consoleCommand = "po [self recursiveDescription]">
-               </ActionContent>
-            </BreakpointActionProxy>
-         </Actions>
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "Yes"
-         filePath = "SplitViewToy/JSView.m"
-         timestampString = "381090654.717668"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
-         landmarkName = "-layoutSubviews"
-         landmarkType = "5">
-         <Actions>
-            <BreakpointActionProxy
-               ActionType = "Xcode.BreakpointAction.Log">
-               <ActionContent
-                  message = "After [super layoutSubviews] *************"
-                  conveyanceType = "0">
-               </ActionContent>
-            </BreakpointActionProxy>
-            <BreakpointActionProxy
-               ActionType = "Xcode.BreakpointAction.DebuggerCommand">
-               <ActionContent
-                  consoleCommand = "po [self recursiveDescription]">
-               </ActionContent>
-            </BreakpointActionProxy>
-         </Actions>
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SplitViewToy/JSDetailViewController.m"
-         timestampString = "381272097.048506"
+         filePath = "SplitViewToy/JSContainerViewController.m"
+         timestampString = "381378447.946227"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "-handleTap:"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
+         landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

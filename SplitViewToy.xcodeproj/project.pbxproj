@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3824846416B9CDC5000EE603 /* JSContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3824846216B9CDC5000EE603 /* JSContainerViewController.m */; };
-		3824846516B9CDC5000EE603 /* JSContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3824846316B9CDC5000EE603 /* JSContainerViewController.xib */; };
 		3871A5DA16B5B76B00F7B9F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5D916B5B76B00F7B9F5 /* UIKit.framework */; };
 		3871A5DC16B5B76B00F7B9F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5DB16B5B76B00F7B9F5 /* Foundation.framework */; };
 		3871A5DE16B5B76B00F7B9F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5DD16B5B76B00F7B9F5 /* CoreGraphics.framework */; };
@@ -22,6 +21,7 @@
 		3871A5F916B5B76B00F7B9F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5D916B5B76B00F7B9F5 /* UIKit.framework */; };
 		3871A5FA16B5B76B00F7B9F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871A5DB16B5B76B00F7B9F5 /* Foundation.framework */; };
 		3871A60216B5B76B00F7B9F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3871A60016B5B76B00F7B9F5 /* InfoPlist.strings */; };
+		38875D6516BB58E500F83B8A /* JSTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38875D6416BB58E500F83B8A /* JSTapGestureRecognizer.m */; };
 		38AF9DF116B5BE5900065404 /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9DF016B5BE5900065404 /* AppDelegateSpec.m */; };
 		38AF9DF416B5C3B900065404 /* SplitViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9DF316B5C3B900065404 /* SplitViewControllerSpec.m */; };
 		38AF9E5216B5D54B00065404 /* JSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AF9E5016B5D54B00065404 /* JSDetailViewController.m */; };
@@ -47,7 +47,6 @@
 /* Begin PBXFileReference section */
 		3824846116B9CDC5000EE603 /* JSContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSContainerViewController.h; sourceTree = "<group>"; };
 		3824846216B9CDC5000EE603 /* JSContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSContainerViewController.m; sourceTree = "<group>"; };
-		3824846316B9CDC5000EE603 /* JSContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSContainerViewController.xib; sourceTree = "<group>"; };
 		3871A5D516B5B76B00F7B9F5 /* SplitViewToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3871A5D916B5B76B00F7B9F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3871A5DB16B5B76B00F7B9F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,6 +64,8 @@
 		3871A5F716B5B76B00F7B9F5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3871A5FF16B5B76B00F7B9F5 /* SplitViewToyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SplitViewToyTests-Info.plist"; sourceTree = "<group>"; };
 		3871A60116B5B76B00F7B9F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38875D6316BB58E500F83B8A /* JSTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTapGestureRecognizer.h; sourceTree = "<group>"; };
+		38875D6416BB58E500F83B8A /* JSTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTapGestureRecognizer.m; sourceTree = "<group>"; };
 		38AF9DF016B5BE5900065404 /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
 		38AF9DF316B5C3B900065404 /* SplitViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplitViewControllerSpec.m; path = ../SplitViewToy/SplitViewControllerSpec.m; sourceTree = "<group>"; };
 		38AF9E4F16B5D54B00065404 /* JSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDetailViewController.h; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 			children = (
 				3824846116B9CDC5000EE603 /* JSContainerViewController.h */,
 				3824846216B9CDC5000EE603 /* JSContainerViewController.m */,
-				3824846316B9CDC5000EE603 /* JSContainerViewController.xib */,
 			);
 			name = ContainerViewController;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		3871A5DF16B5B76B00F7B9F5 /* SplitViewToy */ = {
 			isa = PBXGroup;
 			children = (
-				3824846016B9CD7C000EE603 /* ContainerViewController */,
 				3871A5E816B5B76B00F7B9F5 /* JSAppDelegate.h */,
 				3871A5E916B5B76B00F7B9F5 /* JSAppDelegate.m */,
+				3824846016B9CD7C000EE603 /* ContainerViewController */,
 				38AF9E5F16B5DA1C00065404 /* MasterNavController */,
 				38AF9E5E16B5D9F700065404 /* DetailViewController */,
 				38AF9E6016B5DA4900065404 /* TableViewController */,
@@ -201,6 +201,8 @@
 			children = (
 				38AF9E4F16B5D54B00065404 /* JSDetailViewController.h */,
 				38AF9E5016B5D54B00065404 /* JSDetailViewController.m */,
+				38875D6316BB58E500F83B8A /* JSTapGestureRecognizer.h */,
+				38875D6416BB58E500F83B8A /* JSTapGestureRecognizer.m */,
 				38AF9E5116B5D54B00065404 /* JSDetailViewController.xib */,
 				38AF9E6516B6F9A800065404 /* JSView.h */,
 				38AF9E6616B6F9A800065404 /* JSView.m */,
@@ -308,7 +310,6 @@
 				38AF9E5316B5D54B00065404 /* JSDetailViewController.xib in Resources */,
 				38AF9E5816B5D63D00065404 /* JSMasterNavController.xib in Resources */,
 				38AF9E5D16B5D99100065404 /* JSTableViewController.xib in Resources */,
-				3824846516B9CDC5000EE603 /* JSContainerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +365,7 @@
 				38AF9E5C16B5D99100065404 /* JSTableViewController.m in Sources */,
 				38AF9E6716B6F9A800065404 /* JSView.m in Sources */,
 				3824846416B9CDC5000EE603 /* JSContainerViewController.m in Sources */,
+				38875D6516BB58E500F83B8A /* JSTapGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

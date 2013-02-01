@@ -7,30 +7,38 @@
 //
 
 #import "JSView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation JSView
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _hasShadow = NO;
     }
     return self;
+}
+
++ (BOOL)requiresConstraintBasedLayout {
+    return YES;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     NSLog(@"%@: %@", self, NSStringFromSelector(_cmd));
+    if (self.hasShadow) {
+        [self addShadowsToView];
+    }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void)addShadowsToView {
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                          cornerRadius:0.0f];
+    CALayer *layer = self.layer;
+    layer.shadowPath = shadowPath.CGPath;
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    layer.shadowRadius = 10.0f;
+    layer.shadowOpacity = 0.75f;
+    self.clipsToBounds = NO;
 }
-*/
-
 @end

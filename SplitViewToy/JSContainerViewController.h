@@ -24,7 +24,8 @@
 @end
 
 @interface JSContainerViewController : UIViewController
-@property (nonatomic, copy) IBOutlet UIViewController *leftViewController;
-@property (nonatomic, copy) IBOutlet UIViewController *rightViewController;
-@property (nonatomic, copy) IBOutlet UIViewController *backGroundViewController;
+@property (nonatomic, strong) IBOutlet UIViewController *leftViewController;
+@property (nonatomic, strong
+           ) IBOutlet UIViewController *rightViewController;
+@property (nonatomic, strong) IBOutlet UIViewController *backGroundViewController;
 @end

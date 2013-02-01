@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JSView : UIView
+@property (nonatomic, assign) BOOL hasShadow;
 
 @end

@@ -34,6 +34,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%@: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

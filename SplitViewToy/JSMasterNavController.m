@@ -7,6 +7,7 @@
 //
 
 #import "JSMasterNavController.h"
+#import "JSView.h"
 
 @interface JSMasterNavController ()
 
@@ -26,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +35,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"%@: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
 
 #pragma mark - autolayout fun
 
